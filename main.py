@@ -10,9 +10,11 @@ screen.title('Pong')
 screen.tracer(0)
 
 right_player = Paddle('right')
+right_score = Scoreboard('right')
+
 left_player = Paddle('left')
+left_score = Scoreboard('left')
 ball = Ball()
-scoreboard = Scoreboard('null')
 
 screen.listen()
 screen.onkey(right_player.up, 'Up')
@@ -27,7 +29,7 @@ while game_on:
     ball.move()
 
     # handle wall bounce
-    if ball.ycor() > 30 or ball.ycor() < -30:
+    if ball.ycor() > 300 or ball.ycor() < -300:
         ball.bounce('wall')
 
     # handle paddle bounce
@@ -41,8 +43,10 @@ while game_on:
     # detect ball out of bounds and score
     if ball.xcor() > 360:
         ball.goto(left_player.xcor() + 30, left_player.ycor())
+        left_score.add_point()
     elif ball.xcor() < -360:
         ball.goto(right_player.xcor() - 30, right_player.ycor())
+        right_score.add_point()
 
 
 

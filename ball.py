@@ -1,6 +1,6 @@
 from turtle import Turtle
 
-BALL_SPEED = 0.5
+BALL_SPEED = 1.2
 
 class Ball(Turtle):
     def __init__(self):
