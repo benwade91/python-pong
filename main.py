@@ -29,15 +29,15 @@ while game_on:
     ball.move()
 
     # handle wall bounce
-    if ball.ycor() > 300 or ball.ycor() < -300:
+    if ball.ycor() > 30 or ball.ycor() < -30:
         ball.bounce('wall')
 
     # handle paddle bounce
     #     right paddle
-    if ball.distance(right_player) < 50 and ball.xcor() > 325:
+    if ball.distance(right_player) < 60 and ball.xcor() > 325:
         ball.bounce('paddle')
     #     left paddle
-    if ball.distance(left_player) < 50 and ball.xcor() < -325:
+    if ball.distance(left_player) < 60 and ball.xcor() < -325:
         ball.bounce('paddle')
 
     # detect ball out of bounds and score

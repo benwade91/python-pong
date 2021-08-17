@@ -20,4 +20,3 @@ class Scoreboard(Turtle):
         self.clear()
         self.score += 1
         self.write(self.score, move=False, font=('Courier', 50, 'bold'))
-        print(self.score)
